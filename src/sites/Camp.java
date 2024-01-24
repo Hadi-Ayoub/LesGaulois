@@ -57,6 +57,16 @@ public class Camp {
 			System.out.println("- "+tabSoldat[i].getNom());
 		}
 	}
+	
+	public void changerCommandant(Soldat nouveauCommandant) {
+		if (nouveauCommandant.getGrade() == Soldat.Grade.CENTURION) {
+			commandant = nouveauCommandant;		
+			commandant.parler("Moi "+ commandant.getNom()+" je prends la direction du camp romain.");
+		} else {
+			nouveauCommandant.parler("Je ne suis pas suffisamment gradé pour prendre la direction du camp romain.");
+		}
+	
+	}
 				
 			
 	

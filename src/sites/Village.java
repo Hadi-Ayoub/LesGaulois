@@ -28,7 +28,7 @@ public class Village {
 			}
 		}
 		if (villageComplet) {
-			chef.parler("Désolé "+ villageois.getNom() +" mon village est déjà bien rempli .");
+			chef.parler("Désolé "+ villageois.getNom() +" mon village est déjà bien rempli.");
 		}
 	}
 	
@@ -39,5 +39,16 @@ public class Village {
 			System.out.println("- "+tabGaulois[i].getNom());
 		}
 	}
-
+	
+	public void changerChef(Gaulois nouveauChef) {
+		chef.parler("Je laisse mon grand bouclier au grand "+ nouveauChef.getNom());
+		chef = nouveauChef;
+		chef.parler("Merci ! ");
+	}
+	
+	
+	
+	
+	
+	
 }

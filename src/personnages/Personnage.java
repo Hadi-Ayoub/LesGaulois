@@ -15,7 +15,7 @@ public abstract class Personnage {
 	}
 	
 	public void parler(String text) {
-		System.out.println(donnerAuteur() + this.getNom()+" " + "\" "+text+" \"") ;
+		System.out.println(donnerAuteur() + this.getNom()+" " + "\" "+text+" \".") ;
 	}
 	
 	protected abstract String donnerAuteur();
@@ -34,6 +34,7 @@ public abstract class Personnage {
 			this.parler("Aïe !");	
 		}
 	}
+	
 	
 
 }
