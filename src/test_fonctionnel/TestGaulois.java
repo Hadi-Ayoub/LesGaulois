@@ -6,7 +6,7 @@ import personnages.Romain;
 public class TestGaulois {
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astérix", 8);
-		asterix.parler("Bonjour à tous");
+		asterix.parler("Bonjour à tous ! ");
 		Romain minus = new Romain("Minus", 6);
 		minus.parler("blabla");
 		/*
