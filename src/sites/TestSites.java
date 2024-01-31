@@ -3,9 +3,11 @@ import personnages.Romain;
 import personnages.Soldat;
 import personnages.Soldat.Grade;
 import personnages.Gaulois;
+import personnages.Druide;
 
 public class TestSites {
 	public static void main(String[] args) {
+		/*
 		Gaulois vercingétorix = new Gaulois("Vercingétorix", 5);
 		Village village1 = new Village(vercingétorix);
 		Soldat minus = new Soldat("minus", 2, Grade.CENTURION);
@@ -21,14 +23,16 @@ public class TestSites {
 		Soldat milexcus = new Soldat("Milexcus",2, Grade.SOLDAT);
 		Soldat tulliusOctopus = new Soldat("TulliusOctopus",2, Grade.SOLDAT);
 		Soldat ballondebaudrus = new Soldat("Ballondebaudrus",3, Grade.SOLDAT);
-		/*
+		
 		camp1.ajouterSoldat(brutus);
 		camp1.ajouterSoldat(milexcus);
 		camp1.ajouterSoldat(tulliusOctopus);
 		camp1.ajouterSoldat(ballondebaudrus);
 		System.out.print("\n");
 		camp1.afficherCamp();
-		*/
+		
+		
+		
 		village1.ajouterVillageois(agecanonix);
 		village1.ajouterVillageois(assurancetourix);
 		village1.ajouterVillageois(asterix);
@@ -45,6 +49,12 @@ public class TestSites {
 		System.out.println();
 		camp1.changerCommandant(briseradius);
 		camp1.changerCommandant(chorus);
+		*/
+		
+		// test de la classe Druide : 
+		
+		Druide panoramix = new Druide("Panoramix", 4);
+		panoramix.fabriquerPotionMagique(3);
 	}
 	
 }
