@@ -10,7 +10,7 @@ public class Village {
 		this.chef = chef;
 		this.tabGaulois = new Gaulois[4];
 		chef.parler("Je suis un grand guerrier et je vais créer mon village");
-		
+	
 	}
 	
 	private Gaulois getChef() {
