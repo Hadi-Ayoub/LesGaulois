@@ -21,12 +21,12 @@ public abstract class Personnage {
 	
 	
 	public void frapper(Personnage adversaire) {
-		int forceCoup = force/3;
-		if (forceCoup == 0) {
-			forceCoup =1;
+		
+		if (force == 0) {
+			force =1;
 		}
-		System.out.println(this.getNom() + " donne un grand coup de force "+ forceCoup+ " au "+ adversaire);
-		adversaire.recevoirCoup(forceCoup);
+		System.out.println(this.getNom() + " donne un grand coup de force "+ force+ " au "+ adversaire);
+		adversaire.recevoirCoup(force);
 	}
 	
 	
