@@ -4,11 +4,11 @@ import personnages.Soldat;
 
 public class Camp {
 	private Soldat commandant;
-	private Soldat[] tabSoldat;
+	public Soldat[] tabSoldat;
 	
 	public Camp(Soldat commandant) {
 		this.commandant = commandant;
-		this.tabSoldat = new Soldat[3];
+		this.tabSoldat = new Soldat[80];
 		commandant.parler("Je suis en charge de créer un nouveau camp romain.");
 		
 	}

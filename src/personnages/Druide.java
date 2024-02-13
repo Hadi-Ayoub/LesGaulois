@@ -23,11 +23,7 @@ public class Druide extends Gaulois{
 		this.nbDoses = nbDoses;
 		
 		puissancePotion = random.nextInt(5) + 2;
-		//puissancePotion = random.nextInt(100);
-		/*
-		 System.out.println(this.donnerAuteur()+" "+ this.getNom() + " : \" J'ai concocté "+nbDoses 
-		 		+ " doses de potion magique. Elle a une force de : "+ puissancePotion + " \". " );
-		*/
+	
 		
 		}
 	
@@ -45,7 +41,7 @@ public class Druide extends Gaulois{
 						parler("Non, Obélix Non ! ... Et tu le sais très biens !");
 					}
 		} else {
-			parler("Désolé " + gauloisAbooster.getNom() + " il n'y a plus q'une seule goutte de potion.");
+			parler("Désolé " + gauloisAbooster.getNom() + " il n'y a plus une seule goutte de potion.");
 		}
 		
 	}

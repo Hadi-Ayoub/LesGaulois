@@ -3,12 +3,12 @@ import personnages.Gaulois;
 
 public class Village {
 	private Gaulois chef;
-	private Gaulois[] tabGaulois;
+	public Gaulois[] tabGaulois;
 	
 	
 	public Village(Gaulois chef) {
 		this.chef = chef;
-		this.tabGaulois = new Gaulois[4];
+		this.tabGaulois = new Gaulois[50];
 		chef.parler("Je suis un grand guerrier et je vais créer mon village");
 	
 	}
@@ -45,6 +45,7 @@ public class Village {
 		chef = nouveauChef;
 		chef.parler("Merci ! ");
 	}
+	
 	
 	
 	
