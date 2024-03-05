@@ -46,7 +46,7 @@ public class Soldat extends Romain{
         }
 	}
 	
-	
+	/*
 	public void equiper(Equipement equipement) {
 		if (equipement == null) {
             System.out.println("Impossible d'équiper un équipement null.");
@@ -65,6 +65,28 @@ public class Soldat extends Romain{
 				}
 			}
 	}
+	
+	*/
+	
+	public String equiper(Equipement equipement) {
+		StringBuilder message = new StringBuilder();
+		
+		if (equipement == null) {
+            message.append("Impossible d'équiper un équipement null.");
+        } else if (contientEquipement(equipement)) {
+        	message.append("Le soldat ").append(getNom()).append(" est déjà équipé avec un ").append(equipement);
+        } else {
+				for (int i=0; i<equipements.length; i++) {
+					if (equipements[i] == null) {
+						equipements[i] = equipement;
+						message.append("Le soldat ").append(getNom()).append(" s'équipe avec un ").append(equipement);
+						return message.toString();
+					}
+				}
+			}
+		return message.toString();
+	}
+	
 	
 	public void retirerEquipement(Equipement equipement) {
 		for (int i=0; i<equipements.length; i++ ) {
@@ -85,7 +107,7 @@ public class Soldat extends Romain{
 		}
 		return false;
 	}
-	
+	/*
 	@Override 
 	public void recevoirCoup(int forceCoup) {
 		int sommeProtection =0;
@@ -108,17 +130,51 @@ public class Soldat extends Romain{
 		
 		
         super.recevoirCoup(forceCoup);
+	}*/
+	public String recevoirCOup(int forceCoup) {
+		int sommeProtection = calculerSommeProtection();
+		forceCoup = calculerForceApresProtection(forceCoup, sommeProtection);
+		super.recevoirCoup(forceCoup);
+		String message = genererMessage(sommeProtection);
+		return (message.length() > 0 ) ? message : null;
+				
 	}
 	
+	
+	private int calculerSommeProtection() {
+		int sommeProtection = 0;
+		for (Equipement e : equipements) {
+			if (e != null) {
+				sommeProtection += e.getProtection();
+			}
+		}
+		return sommeProtection;
+	}
+	
+	
+	
+	private int calculerForceApresProtection(int forceCoup, int sommeProtection) {
+		return (sommeProtection > forceCoup) ? 0 : (forceCoup - sommeProtection);
+	}
 
+	
+	private String genererMessage(int sommeProtection) {
+		String message = "";
+		for (Equipement e : equipements) {
+			if (e != null) {
+				message += "le " + e + "absorbe " + e.getProtection() + " du coup.";
+			}
+		}
+		return message;
+	}
 	
 	public Grade getGrade() {
 		return grade;
 	}
 	
 	@Override
-	public void parler(String text) {
-		System.out.println(donnerAuteur() + this.getNom()+" de grade "+ getGrade() + " :  \" " +text+" \".") ;
+	public String parler(String text) {
+		return donnerAuteur() + this.getNom()+" de grade "+ getGrade() + " :  \" " +text+" \"." ;
 	}
 	
 	

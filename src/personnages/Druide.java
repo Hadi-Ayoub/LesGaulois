@@ -28,7 +28,7 @@ public class Druide extends Gaulois{
 		}
 	
 	
-	public void booster(Gaulois gauloisAbooster) {
+	public String booster(Gaulois gauloisAbooster) {
 		//int p = fabriquerPotionMagique(nbDoses);
 		if (this.nbDoses > 0) {
 			if (gauloisAbooster.getNom() != "Obélix") {
@@ -38,12 +38,12 @@ public class Druide extends Gaulois{
 				//gauloisAbooster.setBoost();
 				this.nbDoses--;
 				} else {
-						parler("Non, Obélix Non ! ... Et tu le sais très biens !");
+						return parler("Non, Obélix Non ! ... Et tu le sais très biens !");
 					}
 		} else {
-			parler("Désolé " + gauloisAbooster.getNom() + " il n'y a plus une seule goutte de potion.");
+			return parler("Désolé " + gauloisAbooster.getNom() + " il n'y a plus une seule goutte de potion.");
 		}
-		
+		return null;
 	}
 	
 	public double getPuissancePotion() {

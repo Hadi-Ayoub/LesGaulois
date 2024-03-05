@@ -10,8 +10,8 @@ public abstract class Personnage {
 	}
 	
 	
-	public void parler(String text) {
-		System.out.println(donnerAuteur() + this.getNom()+" " + "\" "+text+" \".") ;
+	public String parler(String text) {
+		return donnerAuteur() + this.getNom()+" " + "\" "+text+" \"." ;
 	}
 	
 	
@@ -20,17 +20,18 @@ public abstract class Personnage {
 	
 	
 	
-	public void frapper(Personnage adversaire) {
+	public String frapper(Personnage adversaire) {
 		
 		if (force == 0) {
 			force =1;
 		}
-		System.out.println(this.getNom() + " donne un grand coup de force "+ force+ " au "+ adversaire);
 		adversaire.recevoirCoup(force);
+		return this.getNom() + " donne un grand coup de force "+ force+ " au "+ adversaire;
+		
 	}
 	
 	
-	
+	/*
 	public void recevoirCoup(int forceCoup) {
 		this.force -= forceCoup;
 		if (this.force <= 0) {
@@ -38,6 +39,22 @@ public abstract class Personnage {
 			this.parler("J'abondonne");
 		} else {
 			this.parler("Aïe !");	
+		}
+	}
+	*/
+	
+	public String recevoirCoup(int forceCoup) {
+		this.force -= forceCoup;
+		String message = afficherResultatCoup();
+		return message;
+	}
+	
+	public String afficherResultatCoup() {
+		if (this.force <= 0) {
+			this.force = 0;
+			return parler("J'abondonne");
+		} else {
+			return parler("Aïe !");	
 		}
 	}
 	

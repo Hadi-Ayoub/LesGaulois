@@ -13,7 +13,7 @@ public class Camp {
 		
 	}
 	
-	private Soldat getCommandant() {
+	public Soldat getCommandant() {
 		return commandant;
 	}
 	/*

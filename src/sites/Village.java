@@ -13,7 +13,7 @@ public class Village {
 	
 	}
 	
-	private Gaulois getChef() {
+	public Gaulois getChef() {
 		return chef;
 	}
 	

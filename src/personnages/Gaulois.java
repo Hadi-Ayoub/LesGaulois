@@ -38,16 +38,16 @@ public class Gaulois extends Personnage {
 
 	
 	@Override
-	public void frapper(Personnage adversaire) {
+	public String frapper(Personnage adversaire) {
 		int forceCoup = force;
 		
 	
-		System.out.println("Le gaulois "+ this.getNom() + " donne un grand coup de force "+  forceCoup* puissanceBoost+" au "+ adversaire);
+		String message = "Le gaulois "+ this.getNom() + " donne un grand coup de force "+  forceCoup* puissanceBoost+" au "+ adversaire;
 		adversaire.recevoirCoup(forceCoup * puissanceBoost);
 		if (puissanceBoost >1) {
 			puissanceBoost -= 0.5;
 		}
-		
+		return message;
 	}
 	
 	
